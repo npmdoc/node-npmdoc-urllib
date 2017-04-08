@@ -1,0 +1,1419 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://github.com/node-modules/urllib">urllib (v2.21.2)</a>
+</h1>
+<h4>Help in opening URLs (mostly HTTP) in a complex world â€” basic and digest authentication, redirections, cookies and more.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib">module urllib</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient">
+            function <span class="apidocSignatureSpan">urllib.</span>HttpClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2">
+            function <span class="apidocSignatureSpan">urllib.</span>HttpClient2
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.create">
+            function <span class="apidocSignatureSpan">urllib.</span>create
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.curl">
+            function <span class="apidocSignatureSpan">urllib.</span>curl
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.request">
+            function <span class="apidocSignatureSpan">urllib.</span>request
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.requestThunk">
+            function <span class="apidocSignatureSpan">urllib.</span>requestThunk
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.requestWithCallback">
+            function <span class="apidocSignatureSpan">urllib.</span>requestWithCallback
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">urllib.</span>TIMEOUT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>HttpClient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>HttpClient2.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>TIMEOUTS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>agent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>httpsAgent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.</span>urljs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">urllib.</span>USER_AGENT</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib.HttpClient">module urllib.HttpClient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient.HttpClient">
+            function <span class="apidocSignatureSpan">urllib.</span>HttpClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient.super_">
+            function <span class="apidocSignatureSpan">urllib.HttpClient.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib.HttpClient.prototype">module urllib.HttpClient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient.prototype.curl">
+            function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>curl
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient.prototype.request">
+            function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>request
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient.prototype.requestThunk">
+            function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>requestThunk
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib.HttpClient2">module urllib.HttpClient2</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2.HttpClient2">
+            function <span class="apidocSignatureSpan">urllib.</span>HttpClient2
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2.super_">
+            function <span class="apidocSignatureSpan">urllib.HttpClient2.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib.HttpClient2.prototype">module urllib.HttpClient2.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2.prototype.curl">
+            function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>curl
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2.prototype.request">
+            function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>request
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.HttpClient2.prototype.requestThunk">
+            function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>requestThunk
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.urllib.urljs">module urllib.urljs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.urljs.curl">
+            function <span class="apidocSignatureSpan">urllib.urljs.</span>curl
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.urljs.request">
+            function <span class="apidocSignatureSpan">urllib.urljs.</span>request
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.urljs.requestThunk">
+            function <span class="apidocSignatureSpan">urllib.urljs.</span>requestThunk
+            <span class="apidocSignatureSpan">(url, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.urllib.urljs.requestWithCallback">
+            function <span class="apidocSignatureSpan">urllib.urljs.</span>requestWithCallback
+            <span class="apidocSignatureSpan">(url, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">urllib.urljs.</span>TIMEOUT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.urljs.</span>TIMEOUTS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.urljs.</span>agent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">urllib.urljs.</span>httpsAgent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">urllib.urljs.</span>USER_AGENT</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib" id="apidoc.module.urllib">module urllib</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient" id="apidoc.element.urllib.HttpClient">
+        function <span class="apidocSignatureSpan">urllib.</span>HttpClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient(options) {
+  EventEmitter.call(this);
+  options = options || {};
+
+  if (options.agent !== undefined) {
+    this.agent = options.agent;
+    this.hasCustomAgent = true;
+  } else {
+    this.agent = urllib.agent;
+    this.hasCustomAgent = false;
+  }
+
+  if (options.httpsAgent !== undefined) {
+    this.httpsAgent = options.httpsAgent;
+    this.hasCustomHttpsAgent = true;
+  } else {
+    this.httpsAgent = urllib.httpsAgent;
+    this.hasCustomHttpsAgent = false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2" id="apidoc.element.urllib.HttpClient2">
+        function <span class="apidocSignatureSpan">urllib.</span>HttpClient2
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient2(options) {
+  HttpClient.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.create" id="apidoc.element.urllib.create">
+        function <span class="apidocSignatureSpan">urllib.</span>create
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (options) {
+  return new exports.HttpClient(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## Global `response` event
+
+You should create a urllib instance first.
+
+```js
+var httpclient = require('urllib').<span class="apidocCodeKeywordSpan">create</span>();
+
+httpclient.on('response', function (info) {
+error: err,
+ctx: args.ctx,
+req: {
+  url: url,
+  options: options,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.curl" id="apidoc.element.urllib.curl">
+        function <span class="apidocSignatureSpan">urllib.</span>curl
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args, callback) {
+  // request(url, callback)
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  if (typeof callback === 'function') {
+    return exports.requestWithCallback(url, args, callback);
+  }
+
+  // Promise
+  if (!_Promise) {
+    _Promise = require('any-promise');
+  }
+  return new _Promise(function (resolve, reject) {
+    exports.requestWithCallback(url, args, makeCallback(resolve, reject));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.request" id="apidoc.element.urllib.request">
+        function <span class="apidocSignatureSpan">urllib.</span>request
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args, callback) {
+  // request(url, callback)
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  if (typeof callback === 'function') {
+    return exports.requestWithCallback(url, args, callback);
+  }
+
+  // Promise
+  if (!_Promise) {
+    _Promise = require('any-promise');
+  }
+  return new _Promise(function (resolve, reject) {
+    exports.requestWithCallback(url, args, makeCallback(resolve, reject));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+### callback
+
+```js
+var urllib = require('urllib');
+
+urllib.<span class="apidocCodeKeywordSpan">request</span>('http://cnodejs.org/', function (err, data, res) {
+if (err) {
+  throw err; // you need to handle error
+}
+console.log(res.statusCode);
+console.log(res.headers);
+// data is Buffer instance
+console.log(data.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.requestThunk" id="apidoc.element.urllib.requestThunk">
+        function <span class="apidocSignatureSpan">urllib.</span>requestThunk
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestThunk(url, args) {
+  return function (callback) {
+    exports.requestWithCallback(url, args, function (err, data, res) {
+      if (err) {
+        return callback(err);
+      }
+      callback(null, {
+        data: data,
+        status: res.statusCode,
+        headers: res.headers,
+        res: res
+      });
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are using [co](https://github.com/visionmedia/co) or [koa](https://github.com/koajs/koa):
+
+```js
+var co = require('co');
+var urllib = require('urllib');
+
+co(function* () {
+  var result = yield urllib.<span class="apidocCodeKeywordSpan">requestThunk</span>('http://nodejs.org');
+  console.log('status: %s, body size: %d, headers: %j',
+    result.status, result.data.length, result.headers);
+})();
+```
+
+## Global `response` event
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.requestWithCallback" id="apidoc.element.urllib.requestWithCallback">
+        function <span class="apidocSignatureSpan">urllib.</span>requestWithCallback
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestWithCallback(url, args, callback) {
+  // requestWithCallback(url, callback)
+  if (!url || (typeof url !== 'string' &amp;&amp; typeof url !== 'object')) {
+    var msg = util.format('expect request url to be a string or a http request options, but got %j', url);
+    throw new Error(msg);
+  }
+
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+
+  args = args || {};
+  if (REQUEST_ID &gt;= MAX_VALUE) {
+    REQUEST_ID = 0;
+  }
+  var reqId = ++REQUEST_ID;
+
+  args.requestUrls = args.requestUrls || [];
+
+  var reqMeta = {
+    requestId: reqId,
+    url: url,
+    args: args,
+    ctx: args.ctx,
+  };
+  if (args.emitter) {
+    args.emitter.emit('request', reqMeta);
+  }
+
+  args.timeout = args.timeout || exports.TIMEOUTS;
+  args.maxRedirects = args.maxRedirects || 10;
+  args.streaming = args.streaming || args.customResponse;
+  var requestStartTime = Date.now();
+  var parsedUrl;
+
+  if (typeof url === 'string') {
+    if (!PROTO_RE.test(url)) {
+      // Support `request('www.server.com')`
+      url = 'http://' + url;
+    }
+    parsedUrl = urlutil.parse(url);
+  } else {
+    parsedUrl = url;
+  }
+
+  var method = (args.type || args.method || parsedUrl.method || 'GET').toUpperCase();
+  var port = parsedUrl.port || 80;
+  var httplib = http;
+  var agent = getAgent(args.agent, exports.agent);
+  var fixJSONCtlChars = !!args.fixJSONCtlChars;
+
+  if (parsedUrl.protocol === 'https:') {
+    httplib = https;
+    agent = getAgent(args.httpsAgent, exports.httpsAgent);
+
+    if (!parsedUrl.port) {
+      port = 443;
+    }
+  }
+
+  var options = {
+    host: parsedUrl.hostname || parsedUrl.host || 'localhost',
+    path: parsedUrl.path || '/',
+    method: method,
+    port: port,
+    agent: agent,
+    headers: args.headers || {},
+    // default is dns.lookup
+    // https://github.com/nodejs/node/blob/master/lib/net.js#L986
+    // custom dnslookup require node &gt;= 4.0.0
+    // https://github.com/nodejs/node/blob/archived-io.js-v0.12/lib/net.js#L952
+    lookup: args.lookup,
+  };
+
+  var sslNames = [
+    'pfx',
+    'key',
+    'passphrase',
+    'cert',
+    'ca',
+    'ciphers',
+    'rejectUnauthorized',
+    'secureProtocol',
+    'secureOptions',
+  ];
+  for (var i = 0; i &lt; sslNames.length; i++) {
+    var name = sslNames[i];
+    if (args.hasOwnProperty(name)) {
+      options[name] = args[name];
+    }
+  }
+
+  // don't check ssl
+  if (options.rejectUnauthorized === false &amp;&amp; !options.hasOwnProperty('secureOptions')) {
+    options.secureOptions = require('constants').SSL_OP_NO_TLSv1_2;
+  }
+
+  var auth = args.auth || parsedUrl.auth;
+  if (auth) {
+    options.auth = auth;
+  }
+
+  var body = args.content || args.data;
+  var dataAsQueryString = method === 'GET' || method === 'HEAD' || args.dataAsQueryString;
+  if (!args.content) {
+    if (body &amp;&amp; !(typeof body === 'string' || Buffer.isBuffer(body))) {
+      if (dataAsQueryString) {
+        // read: GET, HEAD, use query string
+        body = qs.stringify(body);
+      } else {
+        var contentType = options.headers['Content-Type'] || options.headers['content-type'];
+        // auto add application/x-www-form-urlencoded when using urlencode form request
+        if (!contentType) {
+          if (args.contentType === 'json') {
+            contentType = 'application/json';
+          } else {
+            contentType = 'application/x-www-form-urlencoded';
+          }
+          options.headers['Content-Type'] = contentType;
+        }
+
+        if (parseContentType(contentType).type === 'application/json') {
+          body = JSON.stringify(body);
+        } else {
+          // 'application/x-www-form-urlencoded'
+          body = qs.stringify(body);
+        }
+      }
+    }
+  }
+
+  // if it's a GET or HEAD request, data should be sent as query string
+  if (dataAsQueryString &amp;&amp; body) {
+    options.path += (parsedUrl.query ? '&amp;' : '?') + body;
+    body = null;
+  }
+
+  var requestSize = 0;
+  if (body) {
+    var length = body.length;
+    if (!Buffer.isBuffer(body)) {
+      length = Buffer.byteLength(body);
+    }
+    requestSize = options.headers['Content-Length'] = length;
+  }
+
+  if (args.dataT ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.request = function request(url, args, callback) {
+// request(url, callback)
+if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+  callback = args;
+  args = null;
+}
+if (typeof callback === 'function') {
+  return exports.<span class="apidocCodeKeywordSpan">requestWithCallback</span>(url, args, callback);
+}
+
+// Promise
+if (!_Promise) {
+  _Promise = require('any-promise');
+}
+return new _Promise(function (resolve, reject) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib.HttpClient" id="apidoc.module.urllib.HttpClient">module urllib.HttpClient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient.HttpClient" id="apidoc.element.urllib.HttpClient.HttpClient">
+        function <span class="apidocSignatureSpan">urllib.</span>HttpClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient(options) {
+  EventEmitter.call(this);
+  options = options || {};
+
+  if (options.agent !== undefined) {
+    this.agent = options.agent;
+    this.hasCustomAgent = true;
+  } else {
+    this.agent = urllib.agent;
+    this.hasCustomAgent = false;
+  }
+
+  if (options.httpsAgent !== undefined) {
+    this.httpsAgent = options.httpsAgent;
+    this.hasCustomHttpsAgent = true;
+  } else {
+    this.httpsAgent = urllib.httpsAgent;
+    this.hasCustomHttpsAgent = false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient.super_" id="apidoc.element.urllib.HttpClient.super_">
+        function <span class="apidocSignatureSpan">urllib.HttpClient.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib.HttpClient.prototype" id="apidoc.module.urllib.HttpClient.prototype">module urllib.HttpClient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient.prototype.curl" id="apidoc.element.urllib.HttpClient.prototype.curl">
+        function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>curl
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">curl = function (url, args, callback) {
+  if (typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  args = args || {};
+  args.emitter = this;
+  args.agent = getAgent(args.agent, this.agent);
+  args.httpsAgent = getAgent(args.httpsAgent, this.httpsAgent);
+  return urllib.request(url, args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient.prototype.request" id="apidoc.element.urllib.HttpClient.prototype.request">
+        function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>request
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (url, args, callback) {
+  if (typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  args = args || {};
+  args.emitter = this;
+  args.agent = getAgent(args.agent, this.agent);
+  args.httpsAgent = getAgent(args.httpsAgent, this.httpsAgent);
+  return urllib.request(url, args, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+### callback
+
+```js
+var urllib = require('urllib');
+
+urllib.<span class="apidocCodeKeywordSpan">request</span>('http://cnodejs.org/', function (err, data, res) {
+if (err) {
+  throw err; // you need to handle error
+}
+console.log(res.statusCode);
+console.log(res.headers);
+// data is Buffer instance
+console.log(data.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient.prototype.requestThunk" id="apidoc.element.urllib.HttpClient.prototype.requestThunk">
+        function <span class="apidocSignatureSpan">urllib.HttpClient.prototype.</span>requestThunk
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">requestThunk = function (url, args) {
+  args = args || {};
+  args.emitter = this;
+  args.agent = getAgent(args.agent, this.agent);
+  args.httpsAgent = getAgent(args.httpsAgent, this.httpsAgent);
+  return urllib.requestThunk(url, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are using [co](https://github.com/visionmedia/co) or [koa](https://github.com/koajs/koa):
+
+```js
+var co = require('co');
+var urllib = require('urllib');
+
+co(function* () {
+  var result = yield urllib.<span class="apidocCodeKeywordSpan">requestThunk</span>('http://nodejs.org');
+  console.log('status: %s, body size: %d, headers: %j',
+    result.status, result.data.length, result.headers);
+})();
+```
+
+## Global `response` event
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib.HttpClient2" id="apidoc.module.urllib.HttpClient2">module urllib.HttpClient2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2.HttpClient2" id="apidoc.element.urllib.HttpClient2.HttpClient2">
+        function <span class="apidocSignatureSpan">urllib.</span>HttpClient2
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient2(options) {
+  HttpClient.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2.super_" id="apidoc.element.urllib.HttpClient2.super_">
+        function <span class="apidocSignatureSpan">urllib.HttpClient2.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient(options) {
+  EventEmitter.call(this);
+  options = options || {};
+
+  if (options.agent !== undefined) {
+    this.agent = options.agent;
+    this.hasCustomAgent = true;
+  } else {
+    this.agent = urllib.agent;
+    this.hasCustomAgent = false;
+  }
+
+  if (options.httpsAgent !== undefined) {
+    this.httpsAgent = options.httpsAgent;
+    this.hasCustomHttpsAgent = true;
+  } else {
+    this.httpsAgent = urllib.httpsAgent;
+    this.hasCustomHttpsAgent = false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib.HttpClient2.prototype" id="apidoc.module.urllib.HttpClient2.prototype">module urllib.HttpClient2.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2.prototype.curl" id="apidoc.element.urllib.HttpClient2.prototype.curl">
+        function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>curl
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args) {
+  var self = this;
+  args = args || {};
+  args.retry = args.retry || 0;
+  if (args.retryDelay) {
+    args.retryDelay = ms(args.retryDelay);
+  }
+  args.isRetry = args.isRetry || function(res) {
+    return res.status &gt;= 500;
+  };
+  return HttpClient.prototype.request.call(self, url, args)
+  .catch(function(err) {
+    if (args.retry &gt; 0) {
+      args.retry--;
+      debug('retry request %s, remain %s, err %s', url, args.retry, err);
+      if (args.retryDelay) {
+        debug('retry after %sms', args.retryDelay);
+        return sleep(args.retryDelay).then(function() { return self.request(url, args); });
+      }
+      return self.request(url, args);
+    }
+    throw err;
+  })
+  .then(function(res) {
+    if (args.retry &gt; 0 &amp;&amp; typeof args.isRetry === 'function' &amp;&amp; args.isRetry(res)) {
+      args.retry--;
+      debug('retry request %s, remain %s', url, args.retry);
+      if (args.retryDelay) {
+        debug('retry after %sms', args.retryDelay);
+        return sleep(args.retryDelay).then(function() { return self.request(url, args); });
+      }
+      return self.request(url, args);
+    }
+    return res;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2.prototype.request" id="apidoc.element.urllib.HttpClient2.prototype.request">
+        function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>request
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args) {
+  var self = this;
+  args = args || {};
+  args.retry = args.retry || 0;
+  if (args.retryDelay) {
+    args.retryDelay = ms(args.retryDelay);
+  }
+  args.isRetry = args.isRetry || function(res) {
+    return res.status &gt;= 500;
+  };
+  return HttpClient.prototype.request.call(self, url, args)
+  .catch(function(err) {
+    if (args.retry &gt; 0) {
+      args.retry--;
+      debug('retry request %s, remain %s, err %s', url, args.retry, err);
+      if (args.retryDelay) {
+        debug('retry after %sms', args.retryDelay);
+        return sleep(args.retryDelay).then(function() { return self.request(url, args); });
+      }
+      return self.request(url, args);
+    }
+    throw err;
+  })
+  .then(function(res) {
+    if (args.retry &gt; 0 &amp;&amp; typeof args.isRetry === 'function' &amp;&amp; args.isRetry(res)) {
+      args.retry--;
+      debug('retry request %s, remain %s', url, args.retry);
+      if (args.retryDelay) {
+        debug('retry after %sms', args.retryDelay);
+        return sleep(args.retryDelay).then(function() { return self.request(url, args); });
+      }
+      return self.request(url, args);
+    }
+    return res;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+### callback
+
+```js
+var urllib = require('urllib');
+
+urllib.<span class="apidocCodeKeywordSpan">request</span>('http://cnodejs.org/', function (err, data, res) {
+if (err) {
+  throw err; // you need to handle error
+}
+console.log(res.statusCode);
+console.log(res.headers);
+// data is Buffer instance
+console.log(data.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.HttpClient2.prototype.requestThunk" id="apidoc.element.urllib.HttpClient2.prototype.requestThunk">
+        function <span class="apidocSignatureSpan">urllib.HttpClient2.prototype.</span>requestThunk
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestThunk(url, args) {
+  var self = this;
+  return function(done) {
+    self.request(url, args)
+    .catch(done)
+    .then(function(res) {
+      // if callback throw an error, promise will emit UnhandledPromiseRejection,
+      // so use nextTick to prevent promise handling this error.
+      process.nextTick(function() {
+        done(null, res);
+      });
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are using [co](https://github.com/visionmedia/co) or [koa](https://github.com/koajs/koa):
+
+```js
+var co = require('co');
+var urllib = require('urllib');
+
+co(function* () {
+  var result = yield urllib.<span class="apidocCodeKeywordSpan">requestThunk</span>('http://nodejs.org');
+  console.log('status: %s, body size: %d, headers: %j',
+    result.status, result.data.length, result.headers);
+})();
+```
+
+## Global `response` event
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.urllib.urljs" id="apidoc.module.urllib.urljs">module urllib.urljs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.urljs.curl" id="apidoc.element.urllib.urljs.curl">
+        function <span class="apidocSignatureSpan">urllib.urljs.</span>curl
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args, callback) {
+  // request(url, callback)
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  if (typeof callback === 'function') {
+    return exports.requestWithCallback(url, args, callback);
+  }
+
+  // Promise
+  if (!_Promise) {
+    _Promise = require('any-promise');
+  }
+  return new _Promise(function (resolve, reject) {
+    exports.requestWithCallback(url, args, makeCallback(resolve, reject));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.urljs.request" id="apidoc.element.urllib.urljs.request">
+        function <span class="apidocSignatureSpan">urllib.urljs.</span>request
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(url, args, callback) {
+  // request(url, callback)
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+  if (typeof callback === 'function') {
+    return exports.requestWithCallback(url, args, callback);
+  }
+
+  // Promise
+  if (!_Promise) {
+    _Promise = require('any-promise');
+  }
+  return new _Promise(function (resolve, reject) {
+    exports.requestWithCallback(url, args, makeCallback(resolve, reject));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+### callback
+
+```js
+var urllib = require('urllib');
+
+urllib.<span class="apidocCodeKeywordSpan">request</span>('http://cnodejs.org/', function (err, data, res) {
+if (err) {
+  throw err; // you need to handle error
+}
+console.log(res.statusCode);
+console.log(res.headers);
+// data is Buffer instance
+console.log(data.toString());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.urljs.requestThunk" id="apidoc.element.urllib.urljs.requestThunk">
+        function <span class="apidocSignatureSpan">urllib.urljs.</span>requestThunk
+        <span class="apidocSignatureSpan">(url, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestThunk(url, args) {
+  return function (callback) {
+    exports.requestWithCallback(url, args, function (err, data, res) {
+      if (err) {
+        return callback(err);
+      }
+      callback(null, {
+        data: data,
+        status: res.statusCode,
+        headers: res.headers,
+        res: res
+      });
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you are using [co](https://github.com/visionmedia/co) or [koa](https://github.com/koajs/koa):
+
+```js
+var co = require('co');
+var urllib = require('urllib');
+
+co(function* () {
+  var result = yield urllib.<span class="apidocCodeKeywordSpan">requestThunk</span>('http://nodejs.org');
+  console.log('status: %s, body size: %d, headers: %j',
+    result.status, result.data.length, result.headers);
+})();
+```
+
+## Global `response` event
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.urllib.urljs.requestWithCallback" id="apidoc.element.urllib.urljs.requestWithCallback">
+        function <span class="apidocSignatureSpan">urllib.urljs.</span>requestWithCallback
+        <span class="apidocSignatureSpan">(url, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestWithCallback(url, args, callback) {
+  // requestWithCallback(url, callback)
+  if (!url || (typeof url !== 'string' &amp;&amp; typeof url !== 'object')) {
+    var msg = util.format('expect request url to be a string or a http request options, but got %j', url);
+    throw new Error(msg);
+  }
+
+  if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+    callback = args;
+    args = null;
+  }
+
+  args = args || {};
+  if (REQUEST_ID &gt;= MAX_VALUE) {
+    REQUEST_ID = 0;
+  }
+  var reqId = ++REQUEST_ID;
+
+  args.requestUrls = args.requestUrls || [];
+
+  var reqMeta = {
+    requestId: reqId,
+    url: url,
+    args: args,
+    ctx: args.ctx,
+  };
+  if (args.emitter) {
+    args.emitter.emit('request', reqMeta);
+  }
+
+  args.timeout = args.timeout || exports.TIMEOUTS;
+  args.maxRedirects = args.maxRedirects || 10;
+  args.streaming = args.streaming || args.customResponse;
+  var requestStartTime = Date.now();
+  var parsedUrl;
+
+  if (typeof url === 'string') {
+    if (!PROTO_RE.test(url)) {
+      // Support `request('www.server.com')`
+      url = 'http://' + url;
+    }
+    parsedUrl = urlutil.parse(url);
+  } else {
+    parsedUrl = url;
+  }
+
+  var method = (args.type || args.method || parsedUrl.method || 'GET').toUpperCase();
+  var port = parsedUrl.port || 80;
+  var httplib = http;
+  var agent = getAgent(args.agent, exports.agent);
+  var fixJSONCtlChars = !!args.fixJSONCtlChars;
+
+  if (parsedUrl.protocol === 'https:') {
+    httplib = https;
+    agent = getAgent(args.httpsAgent, exports.httpsAgent);
+
+    if (!parsedUrl.port) {
+      port = 443;
+    }
+  }
+
+  var options = {
+    host: parsedUrl.hostname || parsedUrl.host || 'localhost',
+    path: parsedUrl.path || '/',
+    method: method,
+    port: port,
+    agent: agent,
+    headers: args.headers || {},
+    // default is dns.lookup
+    // https://github.com/nodejs/node/blob/master/lib/net.js#L986
+    // custom dnslookup require node &gt;= 4.0.0
+    // https://github.com/nodejs/node/blob/archived-io.js-v0.12/lib/net.js#L952
+    lookup: args.lookup,
+  };
+
+  var sslNames = [
+    'pfx',
+    'key',
+    'passphrase',
+    'cert',
+    'ca',
+    'ciphers',
+    'rejectUnauthorized',
+    'secureProtocol',
+    'secureOptions',
+  ];
+  for (var i = 0; i &lt; sslNames.length; i++) {
+    var name = sslNames[i];
+    if (args.hasOwnProperty(name)) {
+      options[name] = args[name];
+    }
+  }
+
+  // don't check ssl
+  if (options.rejectUnauthorized === false &amp;&amp; !options.hasOwnProperty('secureOptions')) {
+    options.secureOptions = require('constants').SSL_OP_NO_TLSv1_2;
+  }
+
+  var auth = args.auth || parsedUrl.auth;
+  if (auth) {
+    options.auth = auth;
+  }
+
+  var body = args.content || args.data;
+  var dataAsQueryString = method === 'GET' || method === 'HEAD' || args.dataAsQueryString;
+  if (!args.content) {
+    if (body &amp;&amp; !(typeof body === 'string' || Buffer.isBuffer(body))) {
+      if (dataAsQueryString) {
+        // read: GET, HEAD, use query string
+        body = qs.stringify(body);
+      } else {
+        var contentType = options.headers['Content-Type'] || options.headers['content-type'];
+        // auto add application/x-www-form-urlencoded when using urlencode form request
+        if (!contentType) {
+          if (args.contentType === 'json') {
+            contentType = 'application/json';
+          } else {
+            contentType = 'application/x-www-form-urlencoded';
+          }
+          options.headers['Content-Type'] = contentType;
+        }
+
+        if (parseContentType(contentType).type === 'application/json') {
+          body = JSON.stringify(body);
+        } else {
+          // 'application/x-www-form-urlencoded'
+          body = qs.stringify(body);
+        }
+      }
+    }
+  }
+
+  // if it's a GET or HEAD request, data should be sent as query string
+  if (dataAsQueryString &amp;&amp; body) {
+    options.path += (parsedUrl.query ? '&amp;' : '?') + body;
+    body = null;
+  }
+
+  var requestSize = 0;
+  if (body) {
+    var length = body.length;
+    if (!Buffer.isBuffer(body)) {
+      length = Buffer.byteLength(body);
+    }
+    requestSize = options.headers['Content-Length'] = length;
+  }
+
+  if (args.dataT ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.request = function request(url, args, callback) {
+// request(url, callback)
+if (arguments.length === 2 &amp;&amp; typeof args === 'function') {
+  callback = args;
+  args = null;
+}
+if (typeof callback === 'function') {
+  return exports.<span class="apidocCodeKeywordSpan">requestWithCallback</span>(url, args, callback);
+}
+
+// Promise
+if (!_Promise) {
+  _Promise = require('any-promise');
+}
+return new _Promise(function (resolve, reject) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
