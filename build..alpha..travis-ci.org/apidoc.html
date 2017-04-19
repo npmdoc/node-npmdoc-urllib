@@ -51,7 +51,7 @@
 
         href="http://github.com/node-modules/urllib"
 
-    >urllib (v2.21.2)</a>
+    >urllib (v2.22.0)</a>
 </h1>
 <h4>Help in opening URLs (mostly HTTP) in a complex world — basic and digest authentication, redirections, cookies and more.</h4>
 <div class="apidocSectionDiv"><a
@@ -668,7 +668,7 @@ co(function* () {
     if (body &#x26;&#x26; !(typeof body === &#x27;string&#x27; || Buffer.isBuffer(body))) {
       if (dataAsQueryString) {
         // read: GET, HEAD, use query string
-        body = qs.stringify(body);
+        body = args.nestedQuerystring ? qs.stringify(body) : querystring.stringify(body);
       } else {
         var contentType = options.headers[&#x27;Content-Type&#x27;] || options.headers[&#x27;content-type&#x27;];
         // auto add application/x-www-form-urlencoded when using urlencode form request
@@ -685,7 +685,7 @@ co(function* () {
           body = JSON.stringify(body);
         } else {
           // &#x27;application/x-www-form-urlencoded&#x27;
-          body = qs.stringify(body);
+          body = args.nestedQuerystring ? qs.stringify(body) : querystring.stringify(body);
         }
       }
     }
@@ -701,12 +701,7 @@ co(function* () {
   if (body) {
     var length = body.length;
     if (!Buffer.isBuffer(body)) {
-      length = Buffer.byteLength(body);
-    }
-    requestSize = options.headers[&#x27;Content-Length&#x27;] = length;
-  }
-
-  if (args.dataT ...</pre></li>
+      length = Buff ...</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 exports.request = function request(url, args, callback) {
 // request(url, callback)
@@ -1346,7 +1341,7 @@ co(function* () {
     if (body &#x26;&#x26; !(typeof body === &#x27;string&#x27; || Buffer.isBuffer(body))) {
       if (dataAsQueryString) {
         // read: GET, HEAD, use query string
-        body = qs.stringify(body);
+        body = args.nestedQuerystring ? qs.stringify(body) : querystring.stringify(body);
       } else {
         var contentType = options.headers[&#x27;Content-Type&#x27;] || options.headers[&#x27;content-type&#x27;];
         // auto add application/x-www-form-urlencoded when using urlencode form request
@@ -1363,7 +1358,7 @@ co(function* () {
           body = JSON.stringify(body);
         } else {
           // &#x27;application/x-www-form-urlencoded&#x27;
-          body = qs.stringify(body);
+          body = args.nestedQuerystring ? qs.stringify(body) : querystring.stringify(body);
         }
       }
     }
@@ -1379,12 +1374,7 @@ co(function* () {
   if (body) {
     var length = body.length;
     if (!Buffer.isBuffer(body)) {
-      length = Buffer.byteLength(body);
-    }
-    requestSize = options.headers[&#x27;Content-Length&#x27;] = length;
-  }
-
-  if (args.dataT ...</pre></li>
+      length = Buff ...</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 exports.request = function request(url, args, callback) {
 // request(url, callback)
